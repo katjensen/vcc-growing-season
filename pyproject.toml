@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "vcc-growing-season"
+version = "0.1.0"
+description = "An open-source project investigating regional tchanges i in ththe growing season across the US"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "vcc_growing_season"}]
+
+[tool.poetry.dependencies]
+python = "<3.13,>=3.9"
+numpy = "^1.26.1"
+scipy = "^1.11.3"
+pandas = "^2.1.2"
+geopandas = "^0.14.0"
+matplotlib = "^3.8.1"
+seaborn = "^0.13.0"
+pre-commit = "^3.5.0"
+jupyterlab = "^4.0.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 120
+include = "\\.pyi?$"
+exclude = "/(\n    \\.git\n  | \\.hg\n  | \\.mypy_cache\n  | \\.tox\n  | \\.venv\n  | _build\n  | buck-out\n  | build\n  | dist\n)/\n"
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+ignore = [ "E203", "E266", "E501", "F401", "F403", "W503",]
+max-line-length = 120
+count = true
+select = [ "B", "C", "E", "F", "W", "T4", "B9",]
